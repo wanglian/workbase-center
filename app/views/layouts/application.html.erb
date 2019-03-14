@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>企业沟通Center - 二六三增值通信</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => false %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => false %>
+  <%= csrf_meta_tags %>
+  <meta name="renderer" content="webkit|ie-comp|ie-stand">
+</head>
+<body class="sidebar-mini skin-blue" >
+  <div class="wrapper">
+    <header class="main-header">
+      <%= link_to root_path, class: "logo" do %>
+        <span class="logo-lg">Center</span>
+      <% end %>
+      <nav class="navbar navbar-static-top" role="navigation">
+        <div class="navbar-custom-menu">
+          <ul class="nav navbar-nav">
+            <!-- User Account: style can be found in dropdown.less -->
+            <li>
+              <a href="#">
+                <span class="hidden-xs"><%= current_admin.email %></span>
+              </a>
+            </li>
+            <li><%= link_to "退出", destroy_admin_session_path, method: :delete %></li>
+          </ul>
+        </div>
+      </nav>
+    </header>
+
+    <aside class="main-sidebar">
+      <!-- sidebar: style can be found in sidebar.less -->
+      <section class="sidebar">
+        <!-- sidebar menu: : style can be found in sidebar.less -->
+        <ul class="sidebar-menu">
+          <li>
+            <%= link_to instances_path do %><i class="fa fa-cubes"></i> <span>实例</span><% end %>
+          </li>
+        </ul>
+      </section>
+      <!-- /.sidebar -->
+    </aside>
+
+    <!-- Content Wrapper. Contains page content -->
+    <div class="content-wrapper" style="min-height: 1036px; background-color: white">
+      <div class="custom-content-wrapper">
+        <!-- Content Header (Page header) -->
+        <section class="content-header">
+          <h1><%= yield :content_header %></h1>
+        </section>
+
+        <!-- Main content -->
+        <section class="content">
+          <%= yield %>
+        </section><!-- /.content -->
+      </div>
+    </div><!-- /.content-wrapper -->
+    <footer class="main-footer">
+      <div class="pull-right hidden-xs">
+        V 0.1
+      </div>
+      <strong>&copy; 2018 <a href="http://www.263onet.com">上海二六三通信有限公司</a></strong>
+    </footer>
+  </div>
+</body>
+</html>

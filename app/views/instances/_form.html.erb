@@ -1,0 +1,23 @@
+<% if @instance.errors.any? %>
+  <div class="alert alert-error">
+    <ul style="margin:0 0 0px 25px">
+      <% @instance.errors.messages.each do |key, msg| %>
+        <li><%= key %> <%= msg.join(' ') %></li>
+      <% end %>
+    </ul>
+  </div>
+<% end %>
+
+<%= form_for(@instance) do |f| %>
+  <div class="form-group">
+    <%= label_tag(:name, "企业名称") %>
+    <%= f.text_field :company, class: "form-control" %>
+  </div>
+
+  <div class="form-group">
+    <%= label_tag(:server_url, "服务器地址") %>
+    <%= f.text_field :server_url, class: "form-control", id: "server_url",  placeholder: "" %>
+  </div>
+
+  <button type="submit" class="btn btn-primary">保存</button>
+<% end %>

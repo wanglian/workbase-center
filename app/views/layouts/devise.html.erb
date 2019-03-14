@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Center</title>
+  <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
+  <%= csrf_meta_tags %>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body>
+  <!--%= render "layouts/page_tips" %-->
+  <nav class="navbar navbar-default" role="navigation">
+    <div class="container" style="max-width: 480px;">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="/">Center</a>
+      </div>
+      <div class="collapse navbar-collapse">
+        <p class="navbar-text navbar-right">企业沟通</p>
+      </div>
+    </div>
+  </nav>
+  <div class="container" style="max-width: 480px;">
+    <%= yield %>
+  </div>
+</body>
+</html>

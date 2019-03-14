@@ -1,0 +1,33 @@
+<%= content_for :content_header do %>
+  实例列表
+<% end %>
+
+<table class="table table-hover">
+  <thead>
+    <tr>
+      <th>地址</th>
+      <th>企业名称</th>
+      <th>Key</th>
+      <th>Secret</th>
+      <th>操作</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% @instances.each do |instance| %>
+      <tr>
+        <td><%= instance.server_url %></td>
+        <td><%= instance.company %></td>
+        <td><%= instance.app_key %></td>
+        <td><%= instance.app_secret %></td>
+        <td class="small text-muted">
+          <%= link_to '编辑', edit_instance_path(instance) %>
+          <%= link_to '删除', instance_path(instance), method: "delete", data: { confirm: '确认删除吗?' } %>
+        </td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<%= paginate @instances %>
+
+<%= link_to '创建实例',[:new, :instance],  class: 'btn btn-primary' %>

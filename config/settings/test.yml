@@ -1,0 +1,12 @@
+apidoc:
+  user_name: 'admin263'
+  user_pass: 'apitoken'
+wechat:
+  mini_appid: "wxca7407f41558c40a"
+  mini_secret: "43d07018c92271eb1ad5460d843ed1bc"
+redis:
+  host: localhost
+  port: 6379
+  db: 0
+  report_db: 1
+  cache_db: 2
